@@ -1,30 +1,18 @@
 <template>
   <div class="menu">
-    <a>Home</a>
-    <a>Products</a>
-    <a>About</a>
+    <!--반복문은 태그 v-for="작명 in 몇회" :key="작명" (key 안쓰면 에러남)!-->
+    <!-- '몇회' 부분에 자료(array / object)를 집어 넣어서 반복문으로 사용할 수도 있음-->
+    <!-- key는 반복문 돌린 요소를 구분하기 위해 사용하는 것-->
+    <!-- 작명 부분은 2개까지 할 수 있음 <a v-for="(a, i) in menus" ... i는 0부터 1씩 증가하는 정수-->
+    <a v-for="nav in menus" :key="nav"> {{ nav }}</a>
   </div>
 
   <img alt="Vue logo" src="./assets/logo.png" />
-  <div>
+  <div class="roomName">
     <h2 class="red" :style="mystyle">원룸샵</h2>
-    <h4>XX 원룸</h4>
-    <p>{{ price1 }} 만원</p>
   </div>
-  <div>
-    <h4>XX 원룸</h4>
-    <p>{{ price2 }} 만원</p>
-  </div>
-  <div>
-    <h4>{{ products[0] }}</h4>
-    <p>{{ price2 }} 만원</p>
-  </div>
-  <div>
-    <h4>{{ products[1] }}</h4>
-    <p>{{ price1 }} 만원</p>
-  </div>
-  <div>
-    <h4>{{ products[2] }}</h4>
+  <div v-for="(room, i) in products" :key="i">
+    <h4>{{ products[i] }}</h4>
     <p>{{ price2 }} 만원</p>
   </div>
 </template>
@@ -42,6 +30,7 @@ export default {
       price1: 60,
       price2: 70,
       mystyle: "color : blue",
+      menus: ["Home", "Shop", "About"],
       products: ["장덕동원룸", "수완동원룸", "첨단원룸"],
     };
   },
