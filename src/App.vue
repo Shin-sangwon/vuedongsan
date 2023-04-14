@@ -14,9 +14,10 @@
     <h4>XX 원룸</h4>
     <p>{{ price2 }} 만원</p>
     <!-- v-on:click == @click-->
-    <button @click="++report">허위매물신고</button>
+    <!-- 함수는 ()을 제외하고 사용해야함 -->
+    <button @click="increase">허위매물신고</button>
     <span>신고수 : {{ report }}</span>
-    <button @mouseover="++report">허위매물신고</button>
+    <button @mouseover="increase">허위매물신고</button>
     <span>신고수 : {{ report }}</span>
   </div>
   <div>
@@ -50,6 +51,13 @@ export default {
       menus: ["Home", "Shop", "About"],
       products: ["장덕동원룸", "수완동원룸", "첨단원룸"],
     };
+  },
+
+  methods: {
+    increase() {
+      // this로 나의 object를 지정해야함
+      this.report++;
+    },
   },
   components: {},
 };
