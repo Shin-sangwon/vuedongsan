@@ -14,7 +14,9 @@
     <h4>XX 원룸</h4>
     <p>{{ price2 }} 만원</p>
     <!-- v-on:click == @click-->
-    <button @click="report++">허위매물신고</button>
+    <button @click="++report">허위매물신고</button>
+    <span>신고수 : {{ report }}</span>
+    <button @mouseover="++report">허위매물신고</button>
     <span>신고수 : {{ report }}</span>
   </div>
   <div>
