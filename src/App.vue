@@ -12,7 +12,7 @@
     <h2 class="red" :style="mystyle">원룸샵</h2>
   </div>
   <div v-for="(room, i) in products" :key="i">
-    <h4>{{ products[i] }}</h4>
+    <h4>{{ room }}</h4>
     <p>{{ price2 }} 만원</p>
   </div>
 </template>
