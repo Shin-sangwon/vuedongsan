@@ -7,12 +7,26 @@
     <a v-for="nav in menus" :key="nav"> {{ nav }}</a>
   </div>
 
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <div class="roomName">
+  <div>
     <h2 class="red" :style="mystyle">원룸샵</h2>
   </div>
-  <div v-for="(room, i) in products" :key="i">
-    <h4>{{ room }}</h4>
+  <div>
+    <h4>XX 원룸</h4>
+    <p>{{ price2 }} 만원</p>
+    <!-- v-on:click == @click-->
+    <button @click="report++">허위매물신고</button>
+    <span>신고수 : {{ report }}</span>
+  </div>
+  <div>
+    <h4>{{ products[0] }}</h4>
+    <p>{{ price2 }} 만원</p>
+  </div>
+  <div>
+    <h4>{{ products[1] }}</h4>
+    <p>{{ price1 }} 만원</p>
+  </div>
+  <div>
+    <h4>{{ products[2] }}</h4>
     <p>{{ price2 }} 만원</p>
   </div>
 </template>
@@ -30,6 +44,7 @@ export default {
       price1: 60,
       price2: 70,
       mystyle: "color : blue",
+      report: 0,
       menus: ["Home", "Shop", "About"],
       products: ["장덕동원룸", "수완동원룸", "첨단원룸"],
     };
