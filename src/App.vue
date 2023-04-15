@@ -47,7 +47,7 @@ export default {
       price1: 60,
       price2: 70,
       mystyle: "color : blue",
-      report: 0,
+      report: [0, 0, 0],
       menus: ["Home", "Shop", "About"],
       products: ["장덕동원룸", "수완동원룸", "첨단원룸"],
     };
