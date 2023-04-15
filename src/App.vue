@@ -16,21 +16,30 @@
     <!-- v-on:click == @click-->
     <!-- 함수는 ()을 제외하고 사용해야함 -->
     <button @click="increase">허위매물신고</button>
-    <span>신고수 : {{ report }}</span>
+    <span>신고수 : {{ report[0] }}</span>
     <button @mouseover="increase">허위매물신고</button>
-    <span>신고수 : {{ report }}</span>
+    <span>신고수 : {{ report[0] }}</span>
   </div>
   <div>
+    <img src="./assets/room0.jpg" class="room-img" />
     <h4>{{ products[0] }}</h4>
     <p>{{ price2 }} 만원</p>
+    <button @click="report[1]++">허위매물신고</button>
+    <span>신고수 : {{ report[1] }}</span>
   </div>
   <div>
+    <img src="./assets/room1.jpg" class="room-img" />
     <h4>{{ products[1] }}</h4>
     <p>{{ price1 }} 만원</p>
+    <button @click="report[2]++">허위매물신고</button>
+    <span>신고수 : {{ report[2] }}</span>
   </div>
   <div>
+    <img src="./assets/room2.jpg" class="room-img" />
     <h4>{{ products[2] }}</h4>
     <p>{{ price2 }} 만원</p>
+    <button @click="report[3]++">허위매물신고</button>
+    <span>신고수 : {{ report[3] }}</span>
   </div>
 </template>
 
@@ -47,7 +56,7 @@ export default {
       price1: 60,
       price2: 70,
       mystyle: "color : blue",
-      report: [0, 0, 0],
+      report: [0, 0, 0, 0],
       menus: ["Home", "Shop", "About"],
       products: ["장덕동원룸", "수완동원룸", "첨단원룸"],
     };
@@ -56,7 +65,7 @@ export default {
   methods: {
     increase() {
       // this로 나의 object를 지정해야함
-      this.report++;
+      this.report[0]++;
     },
   },
   components: {},
@@ -82,5 +91,10 @@ export default {
 .menu a {
   color: white;
   padding: 10px;
+}
+
+.room-img {
+  width: 100%;
+  margin-top: 40px;
 }
 </style>
