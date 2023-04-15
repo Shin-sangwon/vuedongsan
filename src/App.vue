@@ -1,4 +1,11 @@
 <template>
+  <div class="black-bg">
+    <div class="white-bg">
+      <h4>상세페이지 제목</h4>
+      <p>상세페이지 내용임</p>
+    </div>
+  </div>
+
   <div class="menu">
     <!--반복문은 태그 v-for="작명 in 몇회" :key="작명" (key 안쓰면 에러남)!-->
     <!-- '몇회' 부분에 자료(array / object)를 집어 넣어서 반복문으로 사용할 수도 있음-->
@@ -73,6 +80,29 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.black-bg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  padding: 20px;
+}
+
+.white-bg {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
