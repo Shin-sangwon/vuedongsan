@@ -1,5 +1,5 @@
 <template>
-  <div class="black-bg">
+  <div class="black-bg" v-if="모달창열렸니 == true">
     <div class="white-bg">
       <h4>상세페이지 제목</h4>
       <p>상세페이지 내용임</p>
@@ -18,7 +18,7 @@
     <h2 class="red" :style="mystyle">원룸샵</h2>
   </div>
   <div>
-    <h4>XX 원룸</h4>
+    <h4 @click="모달창열렸니 = true">XX 원룸</h4>
     <p>{{ price2 }} 만원</p>
     <!-- v-on:click == @click-->
     <!-- 함수는 ()을 제외하고 사용해야함 -->
@@ -60,6 +60,9 @@ export default {
   // 3. HTML 속성도 데이터바인딩 가능하다. ({{}} 대신 : 문법 사용해야 함)
   data() {
     return {
+      // 동적인 UI 만들기 : 1. UI의 현재 상태를 데이터로 저장해둠
+      // 2. 데이터에 따라 UI가 어떻게 보일지 작성 (vue -> v-if)
+      모달창열렸니: false,
       price1: 60,
       price2: 70,
       mystyle: "color : blue",
